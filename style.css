@@ -1,0 +1,343 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 680px;
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3a5f, #2d5986);
+    color: #fff;
+    text-align: center;
+    padding: 28px 24px;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header p {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.total-banner {
+    background: #f0f4ff;
+    border-bottom: 1px solid #dde4f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 24px;
+    gap: 10px;
+}
+
+.total-banner span.label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #3a3a5c;
+}
+
+.total-banner span.amount {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e3a5f;
+}
+
+.form-section {
+    padding: 24px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 140px;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 14px;
+    border: 2px solid #dde4f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    background: #fafbff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.form-group input.error,
+.form-group select.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.12);
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.78rem;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.btn-add {
+    margin-top: 18px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    letter-spacing: 0.5px;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-add:active {
+    transform: translateY(0);
+}
+
+/* ── Filter ── */
+.filter-section {
+    padding: 0 24px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-section label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-section select {
+    padding: 8px 14px;
+    border: 2px solid #dde4f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333;
+    background: #fafbff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.filter-section select:focus {
+    border-color: #667eea;
+}
+
+.filter-count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.expense-list {
+    padding: 0 24px 24px;
+}
+
+.expense-list .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #aaa;
+}
+
+.expense-list .empty-state .icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.expense-list .empty-state p {
+    font-size: 0.95rem;
+}
+
+.expense-card {
+    display: flex;
+    align-items: center;
+    background: #fafbff;
+    border: 1px solid #e8ecf4;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.expense-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.expense-card .category-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 14px;
+    white-space: nowrap;
+}
+
+.badge-food {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.badge-travel {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.badge-shopping {
+    background: #fce4ec;
+    color: #c62828;
+}
+
+.badge-education {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge-other {
+    background: #f3e5f5;
+    color: #6a1b9a;
+}
+
+.expense-card .details {
+    flex: 1;
+    min-width: 0;
+}
+
+.expense-card .details .name {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expense-card .expense-amount {
+    font-weight: 800;
+    color: #1e3a5f;
+    font-size: 1.05rem;
+    margin: 0 16px;
+    white-space: nowrap;
+}
+
+.btn-delete {
+    background: none;
+    border: 2px solid #ffc7c7;
+    color: #e74c3c;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-delete:hover {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #e74c3c;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .expense-card {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .expense-card .category-badge {
+        margin-right: 0;
+    }
+
+    .expense-card .expense-amount {
+        margin: 0;
+    }
+
+    .filter-count {
+        margin-left: 0;
+        width: 100%;
+    }
+}
